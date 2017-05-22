@@ -5,9 +5,14 @@ body {
 a {
   color: #00B7FF;
 }
-
+.container-fluid{
+    margin: 0 5%;
+}
 nav li{
   list-style-type: none;
+}
+td{
+    padding: 5px;
 }
 footer p {
   padding-top:5px;
