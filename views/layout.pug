@@ -1,0 +1,58 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/sidebar.css')
+    body
+        #wrapper
+            .overlay
+            //-collapsible sidebar
+            nav.navbar.navbar-inverse.navbar-fixed-top#sidebar-wrapper(role='navigation')
+                ul.nav.sidebar-nav
+                    li.sidebar-brand
+                        a(href='/') Brand Image goes here
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='/about') About
+                    li
+                        a Whatever
+                    //foreach
+                    li
+                        a(href='#', data-toggle='dropdown').dropdown-toggle
+                        ul.dropdown-menu(role='menu')
+                            li.dropdown-header Dropdown Heading
+                            li
+                                a(href='#') stuff
+            #page-content-wrapper
+
+
+                block header
+                    nav.navbar.navbar-default
+                        .container-fluid
+                            .navbar-header
+
+                                button.hamburger.is-closed(type='button', data-toggle='offcanvas')
+                                    span.hamb-top
+                                    span.hamb-middle
+                                    span.hamb-bottom
+                            .collapse.navbar-collapse
+                                ul
+                                    li
+                                        h1
+                                            a(href="/").navbar-brand Learn Stuff or something!
+                                    li Something else
+                block content
+                    .container
+                        h1 "Probably a 404 or something"
+                footer.footer.navbar.navbar-default.text-center
+                    p Copyright &copy; Jonathan Thai
+            script(src='jquery/dist/jquery.min.js')
+            script(src='bootstrap/dist/js/bootstrap.min.js')
+            script(src='/js/script.js')
+
+
+
+
