@@ -10,7 +10,7 @@ html
         #wrapper
             .overlay
             //-collapsible sidebar TODO: Migrate to Bootstrap 4
-            nav.navbar.navbar-inverse.navbar-fixed-top#sidebar-wrapper(role='navigation')
+            nav.navbar.navbar-toggleable-lg.navbar-inverse.navbar-fixed-top#sidebar-wrapper(role='navigation')
                 ul.nav.sidebar-nav
                     li.sidebar-brand
                         a(href='/') Brand Image goes here
@@ -23,7 +23,6 @@ html
                     - var values = ['JapaneseKana', 'Chinese'];
                     each file in values
                         li
-                            //-Change to title
 
                             a(href=file)=file
                     li
