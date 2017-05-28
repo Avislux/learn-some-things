@@ -27,3 +27,26 @@ $(document).ready(function () {
         $('#wrapper').toggleClass('toggled');
     });
 });*/
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+
+$(document).ready(function(){
+    var collapseWrapper = $('#collapse-wrapper');
+    $('#offcanvas-button').click(function(){
+        $('#hide-button').show();
+        $('#page-content-wrapper').addClass('sidebar-push');
+        collapseWrapper.addClass('push');
+        $('#sidebar').show();
+        $(this).hide();
+        /*var toggleWidth = $("#sidebar").width() == 220 ? "0px" : "300px";
+        $('#sidebar').animate(function(){
+            width: toggleWidth
+        },1000);*/
+    });
+    $('#hide-button').click(function(){
+        $('#offcanvas-button').show();
+        $(this).hide();
+        $('#sidebar').hide();
+        $('#page-content-wrapper').removeClass('sidebar-push');
+        collapseWrapper.removeClass('push');
+    })
+});

@@ -12,61 +12,36 @@ html { height: 100%;}
 /*           Wrappers            */
 /*-------------------------------*/
 
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-left: 220px;
-}
-
-#sidebar-wrapper {
-    z-index: 1000;
-    left: 220px;
-    width: 0;
-    height: 100%;
-    margin-left: -220px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    background: #1a1a1a;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#sidebar-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 220px;
-}
 
 #page-content-wrapper {
     width: 100%;
     transition: margin-left .5s;
-    margin-left:100px;
 }
 
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -220px;
-}
 #sidebar{
     height:100%;
     position:fixed;
     z-index:1;
     top:0;
     left:0;
-    width:100px; /*will be changed. set to 0*/
-    transition: 0.3s;
+    width:220px;
+    display:none;
+/*    transition: all .5s;*/
 }
-
+#collapse-wrapper{
+    /*width:0px; !*will be changed. set to 0*!
+    transition: all .5s*/
+}
+.sidebar-push{
+    margin-left:220px;
+}
+.push{
+    width:220px;
+    display:flex !important;
+}
+#hide-button{
+    display:none;
+}
 /*-------------------------------*/
 /*            Overlay            */
 /*-------------------------------*/

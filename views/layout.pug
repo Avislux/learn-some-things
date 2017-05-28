@@ -10,11 +10,11 @@ html
         #wrapper
             .overlay
             //-collapsible sidebar TODO: Migrate to Bootstrap 4
-            .collapse#collapse-wrapper
-                nav.navbar.navbar-toggleable-lg.navbar-inverse.bg-inverse.collapse#sidebar(role='navigation')
-                    ul.nav.sidebar-nav
-                        li.sidebar-brand
-                            a(href='/') Brand Image goes here
+            #collapse-wrapper
+                nav.navbar.navbar-toggleable-lg.navbar-inverse.bg-inverse#sidebar(role='navigation')
+                    ul.sidebar-nav
+                        li.navbar-brand
+                            a(href='/') Brand Image
                         li
                             a(href='/') Home
                         li
@@ -24,7 +24,6 @@ html
                         - var values = ['JapaneseKana', 'Chinese'];
                         each file in values
                             li
-
                                 a(href=file)=file
                         li
                             a(href='#', data-toggle='dropdown').dropdown-toggle
@@ -33,11 +32,11 @@ html
                                 li
                                     a(href='#') stuff
             #page-content-wrapper
-
-
                 block header
                     nav.navbar.navbar-light.bg-primary
-                        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapse-wrapper', aria-controls='#sidebar', aria-expanded='false', aria-label='Toggle navigation')
+                        button.navbar-toggler#offcanvas-button
+                            span.navbar-toggler-icon
+                        button.navbar-toggler#hide-button
                             span.navbar-toggler-icon
                         //.navbar-header
                         //
