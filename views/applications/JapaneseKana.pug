@@ -2,8 +2,13 @@ extends ../layout
 block content
     .container-fluid
         h1 Japanese Kana
+        button.button#show-diacritics-button Show diacritics
+        button.button#hide-diacritics-button(style='display:none') Hide diacritics
         .row
-            table.table
+            table.table.table-bordered.text-center
+                tr
+                    th(colspan=6).text-center Hiragana
+                    th(colspan=6).text-center Katakana
                 tr
                     td
                     td a
@@ -43,6 +48,19 @@ block content
                     td ク　ku
                     td ケ　ke
                     td コ　ko
+                tr.collapse.diacritic-row#g-row
+                    td g-
+                    td が  ga
+                    td ぎ　gi
+                    td ぐ　gu
+                    td げ　ge
+                    td ご　go
+                    td k-
+                    td ガ  ga
+                    td ギ　gi
+                    td グ　gu
+                    td ゲ　ge
+                    td ゴ　go
                 tr
                     td s-
                     td さ　sa
@@ -50,6 +68,25 @@ block content
                     td す　su
                     td せ　se
                     td そ　so
+                    td s-
+                    td サ　sa
+                    td シ　shi
+                    td ス　su
+                    td セ　se
+                    td ソ　so
+                tr.collapse.diacritic-row#z-row
+                    td z-
+                    td ざ　za
+                    td じ  ji
+                    td ず　zu
+                    td ぜ　ze
+                    td ぞ　zo
+                    td z-
+                    td ザ　za
+                    td ジ　ji
+                    td ズ　zu
+                    td ゼ　ze
+                    td ゾ　zo
                 tr
                     td t-
                     td た ta
@@ -57,6 +94,25 @@ block content
                     td つ tsu
                     td て te
                     td と to
+                    td t-
+                    td タ ta
+                    td チ chi
+                    td ツ tsu
+                    td テ te
+                    td ト to
+                tr.collapse.diacritic-row#d-row
+                    td d-
+                    td だ da
+                    td.uncommon-kana ぢ ji
+                    td.uncommon-kana づ zu
+                    td で de
+                    td ど do
+                    td t-
+                    td.uncommon-kana ダ da
+                    td.uncommon-kana ヂ ji
+                    td ヅ zu
+                    td デ de
+                    td ド do
                 tr
                     td r-
                     td ら ra
@@ -64,6 +120,12 @@ block content
                     td る ru
                     td れ re
                     td ろ ro
+                    td r-
+                    td ラ ra
+                    td リ ri
+                    td ル ru
+                    td レ re
+                    td ロ ro
                 tr
                     td m-
                     td ま ma
@@ -71,6 +133,12 @@ block content
                     td む mu
                     td め me
                     td も mo
+                    td m-
+                    td マ ma
+                    td ミ mi
+                    td ム mu
+                    td メ me
+                    td モ mo
                 tr
                     td h-
                     td は ha
@@ -78,6 +146,38 @@ block content
                     td ふ fu
                     td へ he
                     td ほ ho
+                    td h-
+                    td ハ ha
+                    td ヒ hi
+                    td フ fu
+                    td ヘ he
+                    td ホ ho
+                tr.collapse.diacritic-row#b-row
+                    td b-
+                    td ば ba
+                    td び bi
+                    td ぶ bu
+                    td べ be
+                    td ぼ bo
+                    td b-
+                    td バ ba
+                    td ビ bi
+                    td ブ bu
+                    td ベ be
+                    td ボ bo
+                tr.collapse.diacritic-row#p-row
+                    td p-
+                    td ぱ pa
+                    td ぴ pi
+                    td ぷ pu
+                    td ぺ pe
+                    td ぽ po
+                    td p-
+                    td パ pa
+                    td ピ pi
+                    td プ pu
+                    td ペ pe
+                    td ポ po
                 tr
                     td y-
                     td や ya
@@ -85,6 +185,12 @@ block content
                     td ゆ yu
                     td
                     td よ yo
+                    td y-
+                    td ヤ ya
+                    td
+                    td ユ yu
+                    td
+                    td ヨ yo
                 tr
                     td w-
                     td わ wa
@@ -92,3 +198,16 @@ block content
                     td
                     td
                     td を wo
+                    td w-
+                    td ワ wa
+                    td
+                    td
+                    td
+                    td ヲ wo
+                tr
+                    td n
+                    td(colspan=5) ん n
+                    td n
+                    td(colspan=5) ン n
+
+

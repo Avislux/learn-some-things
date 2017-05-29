@@ -48,5 +48,15 @@ $(document).ready(function(){
         $('#sidebar').hide();
         $('#page-content-wrapper').removeClass('sidebar-push');
         collapseWrapper.removeClass('push');
+    });
+    $('#show-diacritics-button').click(function(){
+        $('.diacritic-row').collapse('show');
+        $('#hide-diacritics-button').show();
+        $(this).hide();
+    });
+    $('#hide-diacritics-button').click(function(){
+        $('.diacritic-row').collapse('hide');
+        $('#show-diacritics-button').show();
+        $(this).hide();
     })
 });
