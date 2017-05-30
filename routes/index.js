@@ -24,7 +24,7 @@ router.get('/about', function(req, res){
     });
 });
 router.get('/JapaneseKana', function(req, res){
-    res.render('applications/JapaneseKana', {
+    res.render('applications/JapaneseKana/JapaneseKana', {
         title: 'Japanese Kana Quiz'
     });
 });
