@@ -28,6 +28,11 @@ router.get('/JapaneseKana', function(req, res){
         title: 'Japanese Kana Quiz'
     });
 });
+router.get('/Chinese', function(req, res){
+    res.render('applications/Chinese/Chinese', {
+        title: 'Chinese'
+    });
+});
 router.get('/contact', function(req, res){
     res.render('contact', {
         title: 'Contact'
