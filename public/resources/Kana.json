@@ -1,0 +1,56 @@
+{
+  "vowels": {
+    "a": {
+      "hiragana": "あ",
+      "katakana": "ア",
+      "flags": 0
+    },
+    "i": {
+      "hiragana": "い",
+      "katakana": "イ",
+      "flags": 0
+    },
+    "u": {
+      "hiragana": "う",
+      "katakana": "ウ",
+      "flags": 0
+    },
+    "e": {
+      "hiragana": "え",
+      "katakana": "エ",
+      "flags": 0
+    },
+    "o": {
+      "hiragana": "お",
+      "katakana": "オ",
+      "flags": 0
+    }
+  },
+  "k-row": {
+    "ka": {
+      "hiragana": "か",
+      "katakana": "カ",
+      "flags": 0
+    },
+    "ki": {
+      "hiragana": "き",
+      "katakana": "キ",
+      "flags": 0
+    },
+    "ku": {
+      "hiragana": "く",
+      "katakana": "ク",
+      "flags": 0
+    },
+    "ke": {
+      "hiragana": "け",
+      "katakana": "ケ",
+      "flags": 0
+    },
+    "ko": {
+      "hiragana": "こ",
+      "katakana": "コ",
+      "flags": 0
+    }
+  }
+}

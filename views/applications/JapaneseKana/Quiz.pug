@@ -1,0 +1,12 @@
+extends ../../layout
+block content
+    .container-fluid
+        h1 Japanese Kana
+        .quiz-box
+            h2#show-kana
+            input(type='text')#user-input
+            p#message
+    script.
+        var selectedRows="#{selectedRows}";
+    script(src='/js/KanaQuiz.js')
+

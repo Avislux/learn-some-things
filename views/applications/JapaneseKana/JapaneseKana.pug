@@ -4,13 +4,17 @@ block content
         h1 Japanese Kana
         button.button#show-diacritics-button Show diacritics
         button.button#hide-diacritics-button(style='display:none') Hide diacritics
-        .row
-            table.table.table-bordered.text-center
+        a(href='JapaneseKana/Quiz')
+            button.button-md Quiz
+
+        form(method='post' action='JapaneseKana/Quiz').row
+            table.table.table-bordered.text-center.jap-table
                 tr
-                    th(colspan=6).text-center Hiragana
+                    th(colspan=7).text-center Hiragana
                     th(colspan=6).text-center Katakana
                 tr
                     td
+                    td
                     td a
                     td i
                     td u
@@ -23,6 +27,8 @@ block content
                     td e
                     td o
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='vowels')
                     td
                     td あ　a
                     td い i
@@ -36,6 +42,8 @@ block content
                     td エ e
                     td オ o
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='kRow')
                     td k-
                     td か  ka
                     td き　ki
@@ -49,6 +57,8 @@ block content
                     td ケ　ke
                     td コ　ko
                 tr.collapse.diacritic-row#g-row
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='gRow')
                     td g-
                     td が  ga
                     td ぎ　gi
@@ -62,6 +72,8 @@ block content
                     td ゲ　ge
                     td ゴ　go
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='sRow')
                     td s-
                     td さ　sa
                     td し　shi
@@ -75,6 +87,8 @@ block content
                     td セ　se
                     td ソ　so
                 tr.collapse.diacritic-row#z-row
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='zRow')
                     td z-
                     td ざ　za
                     td じ  ji
@@ -88,6 +102,8 @@ block content
                     td ゼ　ze
                     td ゾ　zo
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='tRow')
                     td t-
                     td た ta
                     td ち chi
@@ -101,6 +117,8 @@ block content
                     td テ te
                     td ト to
                 tr.collapse.diacritic-row#d-row
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='dRow')
                     td d-
                     td だ da
                     td.uncommon-kana ぢ ji
@@ -108,38 +126,30 @@ block content
                     td で de
                     td ど do
                     td t-
-                    td.uncommon-kana ダ da
+                    td ダ da
                     td.uncommon-kana ヂ ji
-                    td ヅ zu
+                    td.uncommon-kana ヅ zu
                     td デ de
                     td ド do
+
                 tr
-                    td r-
-                    td ら ra
-                    td り ri
-                    td る ru
-                    td れ re
-                    td ろ ro
-                    td r-
-                    td ラ ra
-                    td リ ri
-                    td ル ru
-                    td レ re
-                    td ロ ro
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='nRow')
+                    td n-
+                    td な na
+                    td に ni
+                    td ぬ nu
+                    td ね ne
+                    td の no
+                    td n-
+                    td ナ na
+                    td ニ ni
+                    td ヌ nu
+                    td ネ ne
+                    td ノ no
                 tr
-                    td m-
-                    td ま ma
-                    td み mi
-                    td む mu
-                    td め me
-                    td も mo
-                    td m-
-                    td マ ma
-                    td ミ mi
-                    td ム mu
-                    td メ me
-                    td モ mo
-                tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='hRow')
                     td h-
                     td は ha
                     td ひ hi
@@ -152,7 +162,10 @@ block content
                     td フ fu
                     td ヘ he
                     td ホ ho
+
                 tr.collapse.diacritic-row#b-row
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='bRow')
                     td b-
                     td ば ba
                     td び bi
@@ -166,6 +179,8 @@ block content
                     td ベ be
                     td ボ bo
                 tr.collapse.diacritic-row#p-row
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='pRow')
                     td p-
                     td ぱ pa
                     td ぴ pi
@@ -179,6 +194,23 @@ block content
                     td ペ pe
                     td ポ po
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='mRow')
+                    td m-
+                    td ま ma
+                    td み mi
+                    td む mu
+                    td め me
+                    td も mo
+                    td m-
+                    td マ ma
+                    td ミ mi
+                    td ム mu
+                    td メ me
+                    td モ mo
+                tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='yRow')
                     td y-
                     td や ya
                     td
@@ -192,6 +224,23 @@ block content
                     td
                     td ヨ yo
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='rRow')
+                    td r-
+                    td ら ra
+                    td り ri
+                    td る ru
+                    td れ re
+                    td ろ ro
+                    td r-
+                    td ラ ra
+                    td リ ri
+                    td ル ru
+                    td レ re
+                    td ロ ro
+                tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='wRow')
                     td w-
                     td わ wa
                     td
@@ -205,9 +254,62 @@ block content
                     td
                     td ヲ wo
                 tr
+                    td
+                        input(name='selectedRows[]' type='checkbox' value='otherRow')
                     td n
                     td(colspan=5) ん n
                     td n
                     td(colspan=5) ン n
+                input(type='submit' name='submit' title='Submit' id='submit' value='Submit').button
+        h3 Notes
+        .row
+            div.col-sm-12
+                ul
+                    li On repeated consonants, a smaller つ (ツ) is used: っ（ッ）. ん(ン) is used when doubling n.
+                h4 Long Vowels
+                p あ extends <i>a</i> sounds. い extends <em>e</em> and <em>i</em>. う extends <em>o</em> and <em>u</em>
+                | In katakana, vowels are extended with a dash:ー. When writing vertically, the dash is also vertical.
+        h2 Confusing Kana
+        .row
+
+            table.table.table-bordered.text-center.jap-table.col-md-6
+                tr
+                    td Set 1
+                    td ぬ　nu
+                    td め　me
+                tr
+                    td Set 2
+                    td き　ki
+                    td さ　sa
+                    td ち　chi
+                    td ら　ra
+                tr
+                    td Set 3
+                    td ま　ma
+                    td も　mo
+                    td は　ha
+                    td ほ　ho
+                    td け ke
+                tr
+                    td Set 4
+                    td ね ne
+                    td れ re
+                    td わ wa
+
+            table.table.table-bordered.text-center.jap-table.col-md-6
+                tr
+                    td Set 1
+                    td ク　ku
+                    td ケ　ke
+                    td タ ta
+                    td ヌ nu
+                tr
+                    td Set 2
+                    td ツ tsu
+                    td シ chi
+                tr
+                    td Set 3
+                    td ソ so
+                    td ン n
 
 
