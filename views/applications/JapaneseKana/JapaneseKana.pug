@@ -4,263 +4,268 @@ block content
         h1 Japanese Kana
         button.button#show-diacritics-button Show diacritics
         button.button#hide-diacritics-button(style='display:none') Hide diacritics
-        a(href='JapaneseKana/Quiz')
-            button.button-md Quiz
+        .row
+            form(method='post' action='JapaneseKana/Quiz')
+                table.table.table-bordered.text-center.jap-table
+                    tr
+                        th(colspan=7).text-center Hiragana
+                        th(colspan=6).text-center Katakana
+                    tr
+                        td
+                        td
+                        td a
+                        td i
+                        td u
+                        td e
+                        td o
+                        td
+                        td a
+                        td i
+                        td u
+                        td e
+                        td o
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='vowels')
+                        td
+                        td あ　a
+                        td い i
+                        td う u
+                        td え e
+                        td お o
+                        td
+                        td ア　a
+                        td イ i
+                        td ウ u
+                        td エ e
+                        td オ o
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='kRow')
+                        td k-
+                        td か  ka
+                        td き　ki
+                        td く　ku
+                        td け　ke
+                        td こ　ko
+                        td k-
+                        td カ  ka
+                        td キ　ki
+                        td ク　ku
+                        td ケ　ke
+                        td コ　ko
+                    tr.collapse.diacritic-row#g-row
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='gRow')
+                        td g-
+                        td が  ga
+                        td ぎ　gi
+                        td ぐ　gu
+                        td げ　ge
+                        td ご　go
+                        td k-
+                        td ガ  ga
+                        td ギ　gi
+                        td グ　gu
+                        td ゲ　ge
+                        td ゴ　go
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='sRow')
+                        td s-
+                        td さ　sa
+                        td し　shi
+                        td す　su
+                        td せ　se
+                        td そ　so
+                        td s-
+                        td サ　sa
+                        td シ　shi
+                        td ス　su
+                        td セ　se
+                        td ソ　so
+                    tr.collapse.diacritic-row#z-row
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='zRow')
+                        td z-
+                        td ざ　za
+                        td じ  ji
+                        td ず　zu
+                        td ぜ　ze
+                        td ぞ　zo
+                        td z-
+                        td ザ　za
+                        td ジ　ji
+                        td ズ　zu
+                        td ゼ　ze
+                        td ゾ　zo
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='tRow')
+                        td t-
+                        td た ta
+                        td ち chi
+                        td つ tsu
+                        td て te
+                        td と to
+                        td t-
+                        td タ ta
+                        td チ chi
+                        td ツ tsu
+                        td テ te
+                        td ト to
+                    tr.collapse.diacritic-row#d-row
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='dRow')
+                        td d-
+                        td だ da
+                        td.uncommon-kana ぢ ji
+                        td.uncommon-kana づ zu
+                        td で de
+                        td ど do
+                        td t-
+                        td ダ da
+                        td.uncommon-kana ヂ ji
+                        td.uncommon-kana ヅ zu
+                        td デ de
+                        td ド do
 
-        form(method='post' action='JapaneseKana/Quiz').row
-            table.table.table-bordered.text-center.jap-table
-                tr
-                    th(colspan=7).text-center Hiragana
-                    th(colspan=6).text-center Katakana
-                tr
-                    td
-                    td
-                    td a
-                    td i
-                    td u
-                    td e
-                    td o
-                    td
-                    td a
-                    td i
-                    td u
-                    td e
-                    td o
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='vowels')
-                    td
-                    td あ　a
-                    td い i
-                    td う u
-                    td え e
-                    td お o
-                    td
-                    td ア　a
-                    td イ i
-                    td ウ u
-                    td エ e
-                    td オ o
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='kRow')
-                    td k-
-                    td か  ka
-                    td き　ki
-                    td く　ku
-                    td け　ke
-                    td こ　ko
-                    td k-
-                    td カ  ka
-                    td キ　ki
-                    td ク　ku
-                    td ケ　ke
-                    td コ　ko
-                tr.collapse.diacritic-row#g-row
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='gRow')
-                    td g-
-                    td が  ga
-                    td ぎ　gi
-                    td ぐ　gu
-                    td げ　ge
-                    td ご　go
-                    td k-
-                    td ガ  ga
-                    td ギ　gi
-                    td グ　gu
-                    td ゲ　ge
-                    td ゴ　go
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='sRow')
-                    td s-
-                    td さ　sa
-                    td し　shi
-                    td す　su
-                    td せ　se
-                    td そ　so
-                    td s-
-                    td サ　sa
-                    td シ　shi
-                    td ス　su
-                    td セ　se
-                    td ソ　so
-                tr.collapse.diacritic-row#z-row
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='zRow')
-                    td z-
-                    td ざ　za
-                    td じ  ji
-                    td ず　zu
-                    td ぜ　ze
-                    td ぞ　zo
-                    td z-
-                    td ザ　za
-                    td ジ　ji
-                    td ズ　zu
-                    td ゼ　ze
-                    td ゾ　zo
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='tRow')
-                    td t-
-                    td た ta
-                    td ち chi
-                    td つ tsu
-                    td て te
-                    td と to
-                    td t-
-                    td タ ta
-                    td チ chi
-                    td ツ tsu
-                    td テ te
-                    td ト to
-                tr.collapse.diacritic-row#d-row
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='dRow')
-                    td d-
-                    td だ da
-                    td.uncommon-kana ぢ ji
-                    td.uncommon-kana づ zu
-                    td で de
-                    td ど do
-                    td t-
-                    td ダ da
-                    td.uncommon-kana ヂ ji
-                    td.uncommon-kana ヅ zu
-                    td デ de
-                    td ド do
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='nRow')
+                        td n-
+                        td な na
+                        td に ni
+                        td ぬ nu
+                        td ね ne
+                        td の no
+                        td n-
+                        td ナ na
+                        td ニ ni
+                        td ヌ nu
+                        td ネ ne
+                        td ノ no
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='hRow')
+                        td h-
+                        td は ha
+                        td ひ hi
+                        td ふ fu
+                        td へ he
+                        td ほ ho
+                        td h-
+                        td ハ ha
+                        td ヒ hi
+                        td フ fu
+                        td ヘ he
+                        td ホ ho
 
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='nRow')
-                    td n-
-                    td な na
-                    td に ni
-                    td ぬ nu
-                    td ね ne
-                    td の no
-                    td n-
-                    td ナ na
-                    td ニ ni
-                    td ヌ nu
-                    td ネ ne
-                    td ノ no
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='hRow')
-                    td h-
-                    td は ha
-                    td ひ hi
-                    td ふ fu
-                    td へ he
-                    td ほ ho
-                    td h-
-                    td ハ ha
-                    td ヒ hi
-                    td フ fu
-                    td ヘ he
-                    td ホ ho
-
-                tr.collapse.diacritic-row#b-row
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='bRow')
-                    td b-
-                    td ば ba
-                    td び bi
-                    td ぶ bu
-                    td べ be
-                    td ぼ bo
-                    td b-
-                    td バ ba
-                    td ビ bi
-                    td ブ bu
-                    td ベ be
-                    td ボ bo
-                tr.collapse.diacritic-row#p-row
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='pRow')
-                    td p-
-                    td ぱ pa
-                    td ぴ pi
-                    td ぷ pu
-                    td ぺ pe
-                    td ぽ po
-                    td p-
-                    td パ pa
-                    td ピ pi
-                    td プ pu
-                    td ペ pe
-                    td ポ po
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='mRow')
-                    td m-
-                    td ま ma
-                    td み mi
-                    td む mu
-                    td め me
-                    td も mo
-                    td m-
-                    td マ ma
-                    td ミ mi
-                    td ム mu
-                    td メ me
-                    td モ mo
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='yRow')
-                    td y-
-                    td や ya
-                    td
-                    td ゆ yu
-                    td
-                    td よ yo
-                    td y-
-                    td ヤ ya
-                    td
-                    td ユ yu
-                    td
-                    td ヨ yo
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='rRow')
-                    td r-
-                    td ら ra
-                    td り ri
-                    td る ru
-                    td れ re
-                    td ろ ro
-                    td r-
-                    td ラ ra
-                    td リ ri
-                    td ル ru
-                    td レ re
-                    td ロ ro
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='wRow')
-                    td w-
-                    td わ wa
-                    td
-                    td
-                    td
-                    td を wo
-                    td w-
-                    td ワ wa
-                    td
-                    td
-                    td
-                    td ヲ wo
-                tr
-                    td
-                        input(name='selectedRows[]' type='checkbox' value='otherRow')
-                    td n
-                    td(colspan=5) ん n
-                    td n
-                    td(colspan=5) ン n
+                    tr.collapse.diacritic-row#b-row
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='bRow')
+                        td b-
+                        td ば ba
+                        td び bi
+                        td ぶ bu
+                        td べ be
+                        td ぼ bo
+                        td b-
+                        td バ ba
+                        td ビ bi
+                        td ブ bu
+                        td ベ be
+                        td ボ bo
+                    tr.collapse.diacritic-row#p-row
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='pRow')
+                        td p-
+                        td ぱ pa
+                        td ぴ pi
+                        td ぷ pu
+                        td ぺ pe
+                        td ぽ po
+                        td p-
+                        td パ pa
+                        td ピ pi
+                        td プ pu
+                        td ペ pe
+                        td ポ po
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='mRow')
+                        td m-
+                        td ま ma
+                        td み mi
+                        td む mu
+                        td め me
+                        td も mo
+                        td m-
+                        td マ ma
+                        td ミ mi
+                        td ム mu
+                        td メ me
+                        td モ mo
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='yRow')
+                        td y-
+                        td や ya
+                        td
+                        td ゆ yu
+                        td
+                        td よ yo
+                        td y-
+                        td ヤ ya
+                        td
+                        td ユ yu
+                        td
+                        td ヨ yo
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='rRow')
+                        td r-
+                        td ら ra
+                        td り ri
+                        td る ru
+                        td れ re
+                        td ろ ro
+                        td r-
+                        td ラ ra
+                        td リ ri
+                        td ル ru
+                        td レ re
+                        td ロ ro
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='wRow')
+                        td w-
+                        td わ wa
+                        td
+                        td
+                        td
+                        td を wo
+                        td w-
+                        td ワ wa
+                        td
+                        td
+                        td
+                        td ヲ wo
+                    tr
+                        td
+                            input(name='selectedRows[]' type='checkbox' value='otherRow')
+                        td n
+                        td(colspan=5) ん n
+                        td n
+                        td(colspan=5) ン n
                 input(type='submit' name='submit' title='Submit' id='submit' value='Submit').button
+                input(type='radio' name='quizType' id='radio-hira' value='0' checked)
+                label(for='radio-hira' ) Hiragana
+                input(type='radio' name='quizType' id='radio-kata' value='1')
+                label(for='radio-kata' ) Katakana
+                input(type='radio' name='quizType' id='radio-both' value='2')
+                label(for='radio-both' ) Both
+
         h3 Notes
         .row
             div.col-sm-12
