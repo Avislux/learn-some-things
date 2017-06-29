@@ -16,14 +16,14 @@ html
             //-collapsible sidebar TODO: Migrate to Bootstrap 4
             #collapse-wrapper
                 nav.navbar.navbar-toggleable-lg.navbar-inverse.bg-inverse#sidebar(role='navigation')
-                    ul.sidebar-nav
+                    ul.sidebar-nav.btn-group-vertical
                         li.navbar-brand
                             a(href='/') Brand Image
-                        li
+                        li.btn
                             a(href='/') Home
-                        li
+                        li.btn
                             a(href='/about') About
-                        li
+                        li.btn
                             a Whatever
                         - var values = ['JapaneseKana'];
                         each file in values

@@ -34,12 +34,18 @@ console.log("quizType: " + quizType);
  }*/
 /*Equivalent with for loop.*/
 selectedRowsParse.forEach(function (row) {
-    selectedKana.push.apply(selectedKana, eval(row));
+    var appendingRow = eval(row);
+    selectedKana.push.apply(selectedKana, appendingRow);
+    /*TODO: add table fill with rows*/
+    $('#table-check-off').append('<tr id="' + row + '"></tr>');
+    appendingRow.forEach(function(character){
+        $('#'+row).append('<td><p id="'+ character +'">' + character + '</p></td>');
+    });
     if (quizType === '2'){
         /*For both, do it twice.*/
-        selectedKana.push.apply(selectedKana, eval(row));
+        selectedKana.push.apply(selectedKana,appendingRow);
     }
-    /*Parses string into a var name.*/
+    /*eval() Parses string into a var name.*/
 });
 console.log('Selected kana ');
 console.log(selectedKana);
@@ -48,6 +54,7 @@ console.log("shuffled");
 console.log(selectedKana);
 var maxKeyIndex = selectedKana.length - 1;
 var messageTextSelect = $('#message');
+/*if quizType == 2, set to 0 and do the 'both' action*/
 var typeSelector = (quizType === '1' || quizType === '0') ? quizType : 0;
 $.getJSON("/resources/gujuon.json", function (json) {
     $('#show-kana').text(json[selectedKana[keyIndex]][typeSelector]);
@@ -55,16 +62,15 @@ $.getJSON("/resources/gujuon.json", function (json) {
     console.log(selectedKana[keyIndex]);/*Romanji character*/
     userInput.keyup(function () { /*Check if correct.*/
         if ($(this).val() === selectedKana[keyIndex]) {
-            messageTextSelect.text("Fucking lit").delay(800).fadeOut(400, function () {
+            messageTextSelect.text("はい").delay(800).fadeOut(400, function () {
                 messageTextSelect.text("");
                 messageTextSelect.css('display', 'block');
             });
-            console.log("Got it");
+            $('#'+selectedKana[keyIndex]).css('text-decoration', 'line-through').css('color','green');
             /*Clear the field*/
             userInput.val('');
-
             if (keyIndex === maxKeyIndex) {
-                messageTextSelect.text("You're done! Go away");
+                messageTextSelect.text("You're done!").off();
             } else {
                 keyIndex++;
             }
@@ -74,7 +80,7 @@ $.getJSON("/resources/gujuon.json", function (json) {
                 typeSelector = (typeSelector == 0) ? 1: 0 ;
             }
             console.log(selectedKana[keyIndex]);/*Romanji character*/
-            /*Todo not guarenteed to select both hira and kana for a specific romanji*/
+            /*Todo not guarenteed to select both hira and kana for a specific romanji. Table checkoff.*/
         }
     })
 });

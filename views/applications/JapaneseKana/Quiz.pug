@@ -2,10 +2,14 @@ extends ../../layout
 block content
     .container-fluid
         h1 Japanese Kana
-        .quiz-box
-            h2#show-kana
-            input(type='text')#user-input
-            p#message
+        .row
+            .quiz-box.col-md-3
+                h2#show-kana
+                input(type='text')#user-input
+                p#message
+            .col-md-6
+                table#table-check-off.table.table-bordered.text-center
+
     script.
         var selectedRows="#{selectedRows}";
         var quizType="#{quizType}";

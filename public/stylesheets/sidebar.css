@@ -19,6 +19,7 @@ html { height: 100%;}
 }
 
 #sidebar{
+    color:white;
     height:100%;
     position:fixed;
     z-index:1;
@@ -27,6 +28,15 @@ html { height: 100%;}
     width:220px;
     display:none;
 /*    transition: all .5s;*/
+}
+#sidebar a{
+    color:white;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 20px;
+}
+#sidebar li{
+    margin: 15px 0;
+
 }
 #collapse-wrapper{
     /*width:0px; !*will be changed. set to 0*!
