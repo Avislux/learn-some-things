@@ -58,5 +58,8 @@ $(document).ready(function(){
         $('.diacritic-row').collapse('hide');
         $('#show-diacritics-button').show();
         $(this).hide();
+    });
+    $('#all-checkbox').click(function(){
+        $('input[name="selectedRows[]"]').prop("checked", $(this).prop("checked"));
     })
 });

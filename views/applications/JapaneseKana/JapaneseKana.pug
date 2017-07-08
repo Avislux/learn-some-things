@@ -8,7 +8,9 @@ block content
             form(method='post' action='JapaneseKana/Quiz')
                 table.table.table-bordered.text-center.jap-table
                     tr
-                        th(colspan=7).text-center Hiragana
+                        th
+                            input(type='checkbox' name='all' value='all')#all-checkbox
+                        th(colspan=6).text-center Hiragana
                         th(colspan=6).text-center Katakana
                     tr
                         td
@@ -263,8 +265,8 @@ block content
                 label(for='radio-hira' ) Hiragana
                 input(type='radio' name='quizType' id='radio-kata' value='1')
                 label(for='radio-kata' ) Katakana
-                input(type='radio' name='quizType' id='radio-both' value='2')
-                label(for='radio-both' ) Both
+                //input(type='radio' name='quizType' id='radio-both' value='2')
+                //label(for='radio-both' ) Both
 
         h3 Notes
         .row
@@ -272,28 +274,38 @@ block content
                 ul
                     li On repeated consonants, a smaller つ (ツ) is used: っ（ッ）. ん(ン) is used when doubling n.
                 h4 Long Vowels
-                p あ extends <i>a</i> sounds. い extends <em>e</em> and <em>i</em>. う extends <em>o</em> and <em>u</em>
-                | In katakana, vowels are extended with a dash:ー. When writing vertically, the dash is also vertical.
+                ul
+                    li あ extends <i>a</i> sounds. い extends <em>e</em> and <em>i</em>. う extends <em>o</em> and <em>u</em>
+                    li In katakana, vowels are extended with a dash:ー. When writing vertically, the dash is also vertical.
+        h3 Particles
+        .row
+            .col-sm-12
+                ul
+                    li は indicates the topic of a sentence and is pronounced wa when used as such.
+                    li の indicates possession
+                    li を indicates the direct object and is pronounced o when used as such.
+                    li で indicates where the event described by the verb takes place.
+                    li に indicates the goal of movement, or the time of an event.
+                    li へ indicates the goal of movement, and is pronounced e when used as such.
         h2 Confusing Kana
         .row
-
             table.table.table-bordered.text-center.jap-table.col-md-6
                 tr
                     td Set 1
-                    td ぬ　nu
-                    td め　me
+                    td ぬ nu
+                    td め me
                 tr
                     td Set 2
-                    td き　ki
-                    td さ　sa
-                    td ち　chi
-                    td ら　ra
+                    td き ki
+                    td さ sa
+                    td ち chi
+                    td ら ra
                 tr
                     td Set 3
-                    td ま　ma
-                    td も　mo
-                    td は　ha
-                    td ほ　ho
+                    td ま ma
+                    td も mo
+                    td は ha
+                    td ほ ho
                     td け ke
                 tr
                     td Set 4
@@ -304,8 +316,8 @@ block content
             table.table.table-bordered.text-center.jap-table.col-md-6
                 tr
                     td Set 1
-                    td ク　ku
-                    td ケ　ke
+                    td ク ku
+                    td ケ ke
                     td タ ta
                     td ヌ nu
                 tr
@@ -316,5 +328,6 @@ block content
                     td Set 3
                     td ソ so
                     td ン n
+                    td ノ no
 
 
