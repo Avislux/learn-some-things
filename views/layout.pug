@@ -8,7 +8,7 @@ html
         link(rel='stylesheet', href='/stylesheets/sidebar.css')
         script(src='/jquery/dist/jquery.min.js')
         script(src='/tether/dist/js/tether.min.js')
-        script(src='/popper.js/dist/popper.min.js')
+        script(src='/popper.js/dist/umd/popper.min.js')
         script(src='/bootstrap/dist/js/bootstrap.min.js')
         script(src='/js/script.js')
     body
@@ -31,7 +31,7 @@ html
                             - var hrefVal = '/' + file;
                             li
                                 a(href=hrefVal)=file
-                        //li
+                        li
                             a(href='#', data-toggle='dropdown').dropdown-toggle
                             ul.dropdown-menu(role='menu')
                                 li.dropdown-header Dropdown Heading
@@ -45,7 +45,7 @@ html
                                 span.navbar-toggler-icon
                             button.navbar-toggler.float-left#hide-button
                                 span.navbar-toggler-icon
-                            h1.nav-header Learn Some Stuff
+                            h1.text-center Learn Some Stuff
                             .collapse.navbar-collapse
                                 ul
                                     li
@@ -55,8 +55,8 @@ html
                 block content
                     .container-fluid
                         h1 "Probably a 404 or something"
-                footer.footer.navbar.navbar-light.text-center.bg-primary
-                    p Copyright &copy; Jonathan Thai
+                footer.footer.navbar.navbar-light.text-center.bg-primary.text-center
+                    p.text-center Copyright &copy; Jonathan Thai
 
 
 
