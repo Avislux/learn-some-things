@@ -18,19 +18,19 @@ html
                 nav.navbar.navbar-toggleable-lg.navbar-inverse.bg-inverse#sidebar(role='navigation')
                     ul.sidebar-nav.btn-group-vertical
                         li.navbar-brand
-                            a(href='/') Brand Image
+                            a(href='/')
                         li.btn
                             a(href='/') Home
                         li.btn
                             a(href='/about') About
                         li.btn
-                            a Whatever
+                            a
                         - var values = ['JapaneseKana'];
                         each file in values
                             - var hrefVal = '/' + file;
                             li
                                 a(href=hrefVal)=file
-                        li
+                        //li
                             a(href='#', data-toggle='dropdown').dropdown-toggle
                             ul.dropdown-menu(role='menu')
                                 li.dropdown-header Dropdown Heading
@@ -39,12 +39,12 @@ html
             #page-content-wrapper
                 block header
                     header
-                        nav.navbar.navbar-light.bg-primary
-                            button.navbar-toggler#offcanvas-button
+                        nav.navbar.navbar-light.bg-primary.text-center
+                            button.navbar-toggler.float-left#offcanvas-button
                                 span.navbar-toggler-icon
-                            button.navbar-toggler#hide-button
+                            button.navbar-toggler.float-left#hide-button
                                 span.navbar-toggler-icon
-                            h1 Learn Some Stuff
+                            h1.nav-header Learn Some Stuff
                             .collapse.navbar-collapse
                                 ul
                                     li

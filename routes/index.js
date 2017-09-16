@@ -19,7 +19,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/about', function (req, res) {
-    res.render('page', {
+    res.render('about', {
         title: 'About'
     });
 });
