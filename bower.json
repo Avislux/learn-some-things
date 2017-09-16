@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "4"
+    "bootstrap": "4",
+    "popper.js": "^1.12.5",
+    "tether": "^1.4.0"
   }
 }
