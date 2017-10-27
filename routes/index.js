@@ -34,8 +34,6 @@ router.get('/JapaneseKana/Quiz', function (req, res) {
     });
 });
 router.post('/JapaneseKana/Quiz', function (request, res) {
-
-    /*console.log(request.body);*/ /*Check the console you derp. This is server-side*/
     var selectedRows = request.body['selectedRows[]'];
     var quizType = request.body['quizType'];
     console.log(selectedRows);

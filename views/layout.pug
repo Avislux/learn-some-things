@@ -18,20 +18,18 @@ html
             #collapse-wrapper
                 nav.navbar.navbar-toggleable-lg.navbar-inverse.bg-inverse#sidebar(role='navigation')
                     ul.sidebar-nav.btn-group-vertical
-                        li.navbar-brand
+                        //li.navbar-brand
                             a(href='/')
                         li.btn
                             a(href='/') Home
                         li.btn
                             a(href='/about') About
-                        li.btn
-                            a
                         - var values = ['JapaneseKana'];
                         each file in values
                             - var hrefVal = '/' + file;
                             li
                                 a(href=hrefVal)=file
-                        li
+                        //li
                             a(href='#', data-toggle='dropdown').dropdown-toggle
                             ul.dropdown-menu(role='menu')
                                 li.dropdown-header Dropdown Heading
@@ -45,18 +43,19 @@ html
                                 span.navbar-toggler-icon
                             button.navbar-toggler.float-left#hide-button
                                 span.navbar-toggler-icon
-                            h1.text-center Learn Some Stuff
+                            h1.text-center Learn Some Things
                             .collapse.navbar-collapse
                                 ul
                                     li
                                         h1
-                                            a(href="/").navbar-brand Learn Stuff or something!
+                                            a(href="/").navbar-brand Learn useful things!
                                     li Something else
                 block content
                     .container-fluid
                         h1 "Probably a 404 or something"
                 footer.footer.navbar.navbar-light.text-center.bg-primary.text-center
                     p.text-center Copyright &copy; Jonathan Thai
+                    //if using fixed-bottom, the text inside does not respect the sidebar pushing.
 
 
 

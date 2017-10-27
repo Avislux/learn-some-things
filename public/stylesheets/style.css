@@ -43,9 +43,11 @@ header h1{
 .jap-table td {
     font-size: 15pt;
 }
-
+.footer-space{
+    margin-bottom:50px;
+}
 footer {
-    /*position: absolute !important;*/
+    position: relative;
     bottom: 0;
     left:0;
     right:0

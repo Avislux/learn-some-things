@@ -47,13 +47,15 @@ selectedRowsParse.forEach(function (row) {
     }
     /*eval() Parses string into a var name.*/
 });
-console.log('Selected kana ');
-console.log(selectedKana);
+/*console.log('Selected kana ');
+console.log(selectedKana);*/
 selectedKana = shuffle(selectedKana);
-console.log("shuffled");
-console.log(selectedKana);
+/*console.log("shuffled");
+console.log(selectedKana);*/
 var maxKeyIndex = selectedKana.length - 1;
 var messageTextSelect = $('#message');
+var messageDone = $('#message-done');
+
 /*if quizType == 2, set to 0 and do the 'both' action*/
 var typeSelector = (quizType === '1' || quizType === '0') ? quizType : 0;
 $.getJSON("/resources/gujuon.json", function (json) {
@@ -70,7 +72,7 @@ $.getJSON("/resources/gujuon.json", function (json) {
             /*Clear the field*/
             userInput.val('');
             if (keyIndex === maxKeyIndex) {
-                messageTextSelect.text("You're done!").off();
+                messageDone.text("You're done!");
             } else {
                 keyIndex++;
             }
@@ -80,7 +82,6 @@ $.getJSON("/resources/gujuon.json", function (json) {
                 typeSelector = (typeSelector == 0) ? 1: 0 ;
             }
             console.log(selectedKana[keyIndex]);/*Romanji character*/
-            /*Todo not guarenteed to select both hira and kana for a specific romanji. Table checkoff.*/
         }
     })
 });
