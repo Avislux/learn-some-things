@@ -1,4 +1,4 @@
-#Work-in-progress NodeJS application for learning
+# Work-in-progress NodeJS application for learning
 
 Currently hosted at <http://learn-some-stuff.herokuapp.com> (I plan on changing the name)
 
