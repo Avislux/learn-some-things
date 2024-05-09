@@ -9,6 +9,14 @@ var users = require('./routes/users');
 var app = express();
 
 var kana = require('japanese-kana');
+var jsdom = require('jsdom');
+var popper = require('popper');
+var $ = jQuery = require('jquery');
+const { JSDOM } = jsdom;
+
+const { document } = (new JSDOM('')).window;
+global.document = document;
+// var bootstrap = require("bootstrap");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +29,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + 'node_modules/@bower_components'));
 app.use('/', index);
 app.use('/users', users);
 console.log("sup");
@@ -43,7 +51,7 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-app.listen(3000, function () {
+app.listen(3001, function () {
     console.log("Listening on port 3000.");
     console.log("test" + kana.getHiraganaByRomaji("ka"));
 });
