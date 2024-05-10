@@ -11,7 +11,6 @@ var app = express();
 var kana = require('japanese-kana');
 var jsdom = require('jsdom');
 var popper = require('popper');
-var $ = jQuery = require('jquery');
 const { JSDOM } = jsdom;
 
 const { document } = (new JSDOM('')).window;
