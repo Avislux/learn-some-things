@@ -2,8 +2,7 @@
   "name": "learn-some-stuff",
   "version": "0.0.1",
   "engines": {
-    "node": "8.11.4",
-    "yarn": ">= 1.0.0"
+    "node": "8.11.4"
   },
   "private": true,
   "scripts": {
