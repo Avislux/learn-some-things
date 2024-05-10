@@ -2,7 +2,7 @@
   "name": "learn-some-stuff",
   "version": "0.0.1",
   "engines": {
-    "node": "8.11.4"
+    "node": ">=19"
   },
   "private": true,
   "scripts": {
